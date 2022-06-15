@@ -18,15 +18,21 @@ def pegar_cotacoes():
 
 janela = Tk()
 janela.title("Cotação atual das Moedas")
-janela.geometry("400x400")
+janela.geometry("300x250")
 
-texto_orientacao = Label(janela, text="Clique no botão para ver as cotações da moedas")
+texto_orientacao = Label(janela, text="CLIQUE PARA VER A COTAÇÃO ATUAL DAS MOEDAS")
 texto_orientacao.grid(column=0, row=0, padx=10, pady=10)
 
 botao = Button(janela, text="Buscar cotações Dólar/Euro/BTC", command=pegar_cotacoes)
-botao.grid(column=0, row=1, padx=10, pady=10)
+botao.grid(column=0, row=1, padx=5, pady=10)
 
-texto_cotacoes = Label(janela, text="")
+texto_cotacoes = Label(janela, text="Refresh a cada 5 segundos")
 texto_cotacoes.grid(column=0, row=2, padx=10, pady=10)
+
+def Close():
+    janela.destroy()
+
+botao_saida = Button(janela, text="SAIR", command=Close)
+botao_saida.grid(pady=8)
 
 janela.mainloop()
